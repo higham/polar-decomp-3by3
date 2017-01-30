@@ -8,7 +8,7 @@ About
 computing the polar decomposition of a real 3-by-3 matrix.
 This decomposition has the form A = Q*H, where Q is orthogonal and H is
 symmetric positive semidefinite.
-The underlying algorithm is developed in the paper
+The underlying algorithm is developed in the open-access paper
 
 N. J. Higham and V. Noferini.
 "[An algorithm to compute the polar decomposition of a $3 \times 3$
