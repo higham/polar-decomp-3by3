@@ -14,7 +14,7 @@ check(A,Q,H)
 fprintf('Test (5.2) from paper:\n')
 for y = sqrt([1 1e-4 1e-8 1e-12 1e-16])
     A = (1/1275)*(...
-                  [720 650 710
+                  [720 -650 710
                   396 -145 178
                   972 610 -529]*y + ...
                   [-25 300 300
@@ -22,10 +22,12 @@ for y = sqrt([1 1e-4 1e-8 1e-12 1e-16])
                   -10 120 120]);
     [Q,H] = polar_quaternion(A);
     check(A,Q,H)
-    % Check relative error in Q.
-    [U,S,V] = svd(A); Q1 = U*V';
+    % Check relative error in computed Q using exact Q.
+    Q1 = [ 139/255  -14/51    202/255
+           466/1275 -197/255 -662/1275
+           962/1275  146/255 -409/1275];
     kappa = sqrt( (1+2*y^2)/(3*y^2) ); % Condition numner of U.
-    fprintf('Scaled rel error in Q  = %8.2e\n',...
+    fprintf('Scaled rel error in Q = %8.2e\n',...
              norm(Q - Q1)/(norm(Q1)*kappa));
 end
 end
