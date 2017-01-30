@@ -159,7 +159,6 @@ else
     dd = dd(1)*U(1)*U(2)*U(3);
 end
 
-
 if d(1) == 0,d = 1;end
 
 dd = 8*d(1)*dd(1);
@@ -172,9 +171,6 @@ B = [t(1) A(2,3)-A(3,2) A(3,1)-A(1,3) A(1,2)-A(2,1)
 
 B = d(1)*B;
 B(2,1) = B(1,2);B(3,1) = B(1,3);B(4,1) = B(1,4);B(3,2) = B(2,3);B(4,2) = B(2,4);B(4,3) = B(3,4);
-
-
-%keyboard
 
 % Find largest eigenvalue by analytic formula
 
@@ -196,7 +192,6 @@ else
     end
 end
 
-
 if quick
     %LDL
     BB = -B;
@@ -217,8 +212,7 @@ if quick
     BB(3,3) = BB(3,3)-L(3,1)*BB(1,3);
     BB(4,3) = BB(4,3)-L(3,1)*BB(1,4);BB(3,4) = BB(4,3);
     BB(4,4) = BB(4,4)-L(4,1)*BB(1,4);
-    
-    
+   
     %Second step
     
     r = 4;if BB(4,4)<BB(3,3), r = 3; end;
@@ -235,7 +229,6 @@ if quick
     BB(3,3) = BB(3,3)-L(3,2)*BB(2,3);
     BB(4,3) = BB(4,3)-L(3,2)*BB(2,4);BB(3,4) = BB(4,3);
     BB(4,4) = BB(4,4)-L(4,2)*BB(2,4);
-    
     
     %Third step
     

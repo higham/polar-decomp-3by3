@@ -1,5 +1,5 @@
 function test
-%TEST   Test polar_quaternion.
+%TEST   Test the function polar_quaternion.
 
 fprintf('Testing function polar_quaternion\n')
 fprintf('Test statistics should all be of order %8.2e\n\n', eps)
